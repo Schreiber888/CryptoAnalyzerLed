@@ -19,29 +19,29 @@ public class CaesarCipher {
                 arrayAlphabet[i] = ALPHABET[j];
             }
         }
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        try (FileReader reader = new FileReader(inputFile);
              FileWriter writer = new FileWriter(outputFile)) {
             //tringTokenizer stringTokenizer = new StringTokenizer()
-            while (reader.ready()) {
+            /*while (reader.ready()){
                 char symbol = (char) reader.read();
+                writer.write(symbol);
+            }*/
+            int value;
+            while ((value = reader.read()) > -1) {
+                char symbol = (char) value;
                 for (int i = 0; i < ALPHABET.length; i++) {
-                    if (symbol == ALPHABET[42]) {
-                        writer.write(ALPHABET[42]);
-                    } else if (symbol == ' '+' ') {
-                        writer.write("/n");
-                    } else if (symbol == ALPHABET[i]) {
+                    char symbolToLower = Character.toLowerCase(symbol);
+                    if (symbolToLower == ALPHABET[i]) {
                         //System.out.print(arrayAlphabet[i]);
                         writer.write(arrayAlphabet[i]);
+                    } else if (symbolToLower == '\n') {
+                        writer.write('\n');
                     }
-
                 }
-
-
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
         /*public void decrypt (String inputFile, String outputFile,int key){
