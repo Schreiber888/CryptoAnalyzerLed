@@ -2,6 +2,7 @@ package com.javarush.bekk;
 
 import java.io.*;
 
+
 public class CaesarCipher {
     private static final char[] ALPHABET = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
             'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
@@ -11,7 +12,7 @@ public class CaesarCipher {
         // Реализация шифрования
         char[] arrayAlphabet = new char[ALPHABET.length];
         for (int i = 0, j = 0; i < ALPHABET.length; i++, j++) {
-            if (j <= ALPHABET.length - key - 1) {
+            if (j < ALPHABET.length - key) {
                 arrayAlphabet[i] = ALPHABET[j + key]; //key сделать ограничение
             } else {
                 j = 0;
@@ -19,15 +20,13 @@ public class CaesarCipher {
             }
         }
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-             //BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
              FileWriter writer = new FileWriter(outputFile)) {
-
-            String str = "/n";
+            //tringTokenizer stringTokenizer = new StringTokenizer()
             while (reader.ready()) {
                 char symbol = (char) reader.read();
                 for (int i = 0; i < ALPHABET.length; i++) {
-                    if (symbol == ' ') {
-                        writer.write(' ');
+                    if (symbol == ALPHABET[42]) {
+                        writer.write(ALPHABET[42]);
                     } else if (symbol == ' '+' ') {
                         writer.write("/n");
                     } else if (symbol == ALPHABET[i]) {
@@ -39,8 +38,6 @@ public class CaesarCipher {
 
 
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
