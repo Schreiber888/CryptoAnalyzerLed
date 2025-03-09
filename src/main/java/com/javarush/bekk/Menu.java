@@ -14,7 +14,7 @@ public class Menu {
         this.command = command;
     }
 
-    public static int resolve(int command) {
+    public static int resolveMode(int command) {
         switch (command) {
             case 1:
                 mode = 0;
