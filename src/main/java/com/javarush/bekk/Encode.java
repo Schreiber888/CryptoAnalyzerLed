@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Encode extends CaesarCipher{
-    public static void encode(String inputFile, String outputFile, char[] ALPHABET, char[] arrayAlphabet) {
+public class Encode {
+    public void encode(String inputFile, String outputFile, char[] ALPHABET, char[] arrayAlphabetForEncrypt) {
         try (
                 BufferedReader reader = Files.newBufferedReader(Path.of(inputFile));
                 BufferedWriter writer = Files.newBufferedWriter(Path.of(outputFile))) {
@@ -18,7 +18,7 @@ public class Encode extends CaesarCipher{
                     char symbolToLower = Character.toLowerCase(symbol);
                     if (symbolToLower == ALPHABET[i]) {
                         //System.out.print(arrayAlphabet[i]);
-                        writer.write(arrayAlphabet[i]);
+                        writer.write(arrayAlphabetForEncrypt[i]);
 
                     } else if (symbol == '\n') {
                         writer.write('\n');
