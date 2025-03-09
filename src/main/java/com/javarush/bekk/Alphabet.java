@@ -21,7 +21,7 @@ public class Alphabet {
                 k++;
             }
         }
-        return arrayAlphabet;//ert
+        return arrayAlphabet;//erty
     }
 
     public static char[] alphabetForDecrypt(int key) {
