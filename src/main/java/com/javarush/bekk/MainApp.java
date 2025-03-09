@@ -9,7 +9,7 @@ public class MainApp {
         CaesarCipher caesarCipher = new CaesarCipher();
         Scanner scanner = new Scanner(System.in);
 
-Menu menu = new Menu("I:\\j\\project1\\text.txt","I:\\j\\project1\\encryptText.txt",);
+//Menu menu = new Menu("I:\\j\\project1\\text.txt","I:\\j\\project1\\encryptText.txt",);
         String inputText = "I:\\j\\project1\\text.txt";
         String outputTextEncrypt = "I:\\j\\project1\\encryptText.txt";
         String outputTextDecrypt = "I:\\j\\project1\\decryptText.txt";
