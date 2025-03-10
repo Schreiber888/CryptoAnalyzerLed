@@ -6,8 +6,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Decode{
-    public void decode(String inputFile, String outputFile, char[] ALPHABET, char[] arrayAlphabetForEncrypt) {
+public class Decode implements Action{
+    @Override
+    public void doAction(String inputFile, String outputFile, char[] ALPHABET, char[] arrayAlphabetForEncrypt) {
         try (
                 BufferedReader reader = Files.newBufferedReader(Path.of(inputFile));
                 BufferedWriter writer = Files.newBufferedWriter(Path.of(outputFile))) {
@@ -33,4 +34,30 @@ public class Decode{
             throw new RuntimeException(e);
         }
     }
+    /*public void decode(String inputFile, String outputFile, char[] ALPHABET, char[] arrayAlphabetForEncrypt) {
+        try (
+                BufferedReader reader = Files.newBufferedReader(Path.of(inputFile));
+                BufferedWriter writer = Files.newBufferedWriter(Path.of(outputFile))) {
+
+            int value;
+            while ((value = reader.read()) > -1) {
+                char symbol = (char) value;
+                for (int i = 0; i < ALPHABET.length; i++) {
+                    char symbolToLower = Character.toLowerCase(symbol);
+                    if (symbolToLower == arrayAlphabetForEncrypt[i]) {
+                        //System.out.print(arrayAlphabet[i]);
+                        writer.write(ALPHABET[i]);
+
+                    } else if (symbol == '\n') {
+                        writer.write('\n');
+                        i = arrayAlphabetForEncrypt.length;
+                    }
+                }
+
+            }
+        } catch (
+                IOException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
 }

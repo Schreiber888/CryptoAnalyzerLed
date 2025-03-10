@@ -10,9 +10,12 @@ public class MainApp {
         Scanner scanner = new Scanner(System.in);
 
 //Menu menu = new Menu("I:\\j\\project1\\text.txt","I:\\j\\project1\\encryptText.txt",);
-        String inputText = "I:\\j\\project1\\text.txt";
+        String inputText = "C:\\projects\\1\\text.txt";
+        String outputTextEncrypt = "C:\\projects\\1\\encryptText.txt";
+        String outputTextDecrypt = "C:\\projects\\1\\decryptText.txt";
+        /*String inputText = "I:\\j\\project1\\text.txt";
         String outputTextEncrypt = "I:\\j\\project1\\encryptText.txt";
-        String outputTextDecrypt = "I:\\j\\project1\\decryptText.txt";
+        String outputTextDecrypt = "I:\\j\\project1\\decryptText.txt";*/
         int key = 5;
         int command = 0;
         Alphabet alphabet = new Alphabet(key);
@@ -22,9 +25,9 @@ public class MainApp {
         Encode encode = new Encode();
         Decode decode = new Decode();
         /*if (menu.resolveMode(command) == 0) {*/
-            encode.encode(inputText, outputTextEncrypt, alphabet.ALPHABET, charsAlphabetForEncrypt);
+            encode.doAction(inputText, outputTextEncrypt, alphabet.ALPHABET, charsAlphabetForEncrypt);
        /* } else if (menu.resolveMode(command) == 1) {*/
-            decode.decode(outputTextEncrypt, outputTextDecrypt, alphabet.ALPHABET, charsAlphabetForDecrypt);
+            decode.doAction(outputTextEncrypt, outputTextDecrypt, alphabet.ALPHABET, charsAlphabetForDecrypt);
         //}
 
 
