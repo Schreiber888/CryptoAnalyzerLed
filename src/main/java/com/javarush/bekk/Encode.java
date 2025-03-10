@@ -20,43 +20,14 @@ public class Encode implements Action{
                     if (symbolToLower == ALPHABET[i]) {
                         //System.out.print(arrayAlphabet[i]);
                         writer.write(arrayAlphabetForEncrypt[i]);
-
                     } else if (symbol == '\n') {
                         writer.write('\n');
                         i = ALPHABET.length;//rt
                     }
                 }
-
             }
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-    /*public void encode(String inputFile, String outputFile, char[] ALPHABET, char[] arrayAlphabetForEncrypt) {
-        try (
-                BufferedReader reader = Files.newBufferedReader(Path.of(inputFile));
-                BufferedWriter writer = Files.newBufferedWriter(Path.of(outputFile))) {
-            int value;
-            while ((value = reader.read()) > -1) {
-                char symbol = (char) value;
-                for (int i = 0; i < ALPHABET.length; i++) {
-                    char symbolToLower = Character.toLowerCase(symbol);
-                    if (symbolToLower == ALPHABET[i]) {
-                        //System.out.print(arrayAlphabet[i]);
-                        writer.write(arrayAlphabetForEncrypt[i]);
-
-                    } else if (symbol == '\n') {
-                        writer.write('\n');
-                        i = ALPHABET.length;//rt
-                    }
-                }
-
-            }
-        } catch (
-                IOException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
 }

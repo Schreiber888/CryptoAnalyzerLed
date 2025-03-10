@@ -10,7 +10,6 @@ public class Alphabet {
     public final char[] ALPHABET = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
             'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
             'ъ', 'ы', 'ь', 'э', 'ю', 'я', '.', ',', '«', '»', '"', '\'', ':', '!', '?', ' ', '-'};
-
     public char[] alphabetForEncrypt(int key) {
         char[] arrayAlphabetForEncrypt = new char[ALPHABET.length];
         for (int i = 0, j = 0, k = 0; i < ALPHABET.length; i++, j++) {
@@ -23,7 +22,6 @@ public class Alphabet {
         }
         return arrayAlphabetForEncrypt;//erty
     }
-
     public char[] alphabetForDecrypt(int key) {
         char[] arrayAlphabetForEncrypt = new char[ALPHABET.length];
         for (int i = 0, j = 0, k = 0; i < ALPHABET.length; i++, j++) {
