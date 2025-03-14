@@ -3,24 +3,41 @@ package com.javarush.bekk;
 import java.util.Scanner;
 
 public class Enter {
-    String inputText;
-    String outputTextEncrypt;
-    int key;
-    int command;
+    private static String inputText;
+    private static String outputTextEncrypt;
+    private static int key;
+    private static int command;
 
+    public static String getInputText() {
+        return inputText;
+    }
 
-    public static Enter enterForEncrypt(){
+    public static String getOutputTextEncrypt() {
+        return outputTextEncrypt;
+    }
+
+    public static int getKey() {
+        return key;
+    }
+
+    public static int getCommand() {
+        return command;
+    }
+
+    public static void enterForEncrypt(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(Constant.ENTER_INPUT_FILE);
-        String inputText = scanner.nextLine();
+        inputText = scanner.nextLine();
         System.out.println(Constant.ENTER_OUTPUT_FILE);
-        String outputTextEncrypt = scanner.nextLine();
+        outputTextEncrypt = scanner.nextLine();
         System.out.println(Constant.ENTER_KEY);
-        int key = scanner.nextInt();
+        key = scanner.nextInt();
         System.out.println(Constant.ENTER_COMMAND);
-        int command = scanner.nextInt();
-        return null;
+        command = scanner.nextInt();
     }
+
+
+
 
 
 }
