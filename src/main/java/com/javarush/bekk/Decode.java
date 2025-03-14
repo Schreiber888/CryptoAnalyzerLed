@@ -20,7 +20,6 @@ public class Decode implements Action{
                     if (symbolToLower == arrayAlphabetForEncrypt[i]) {
                         //System.out.print(arrayAlphabet[i]);
                         writer.write(ALPHABET[i]);
-
                     } else if (symbol == '\n') {
                         writer.write('\n');
                         i = arrayAlphabetForEncrypt.length;
