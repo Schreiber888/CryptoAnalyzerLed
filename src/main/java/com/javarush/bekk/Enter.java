@@ -3,6 +3,11 @@ package com.javarush.bekk;
 import java.util.Scanner;
 
 public class Enter {
+    String inputText;
+    String outputTextEncrypt;
+    int key;
+    int command;
+
 
     public static Enter enterForEncrypt(){
         Scanner scanner = new Scanner(System.in);
