@@ -3,17 +3,17 @@ package com.javarush.bekk;
 import java.util.Scanner;
 
 public class Enter {
-    private static String inputText;
-    private static String outputTextEncrypt;
+    private static String inputFile;
+    private static String outputFileEncrypt;
     private static int key;
     private static int command;
 
-    public static String getInputText() {
-        return inputText;
+    public static String getInputFile() {
+        return inputFile;
     }
 
-    public static String getOutputTextEncrypt() {
-        return outputTextEncrypt;
+    public static String getOutputFileEncrypt() {
+        return outputFileEncrypt;
     }
 
     public static int getKey() {
@@ -27,16 +27,26 @@ public class Enter {
     public static void enterForEncrypt(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(Constant.ENTER_INPUT_FILE);
-        inputText = scanner.nextLine();
-        System.out.println(Constant.ENTER_OUTPUT_FILE);
-        outputTextEncrypt = scanner.nextLine();
+        inputFile = scanner.nextLine();
+        System.out.println(Constant.ENTER_OUTPUT_FILE_ENCRYPT);
+        outputFileEncrypt = scanner.nextLine();
         System.out.println(Constant.ENTER_KEY);
-        key = scanner.nextInt();
+        key = scanner.nextInt(); //не хорошо. Надо везде использовать nextLine
         System.out.println(Constant.ENTER_COMMAND);
         command = scanner.nextInt();
     }
 
-
+    public static void enterForDecrypt(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(Constant.ENTER_INPUT_FILE_FOR_DECRYPT);
+        inputFile = scanner.nextLine();
+        System.out.println(Constant.ENTER_OUTPUT_FILE_DECRYPT);
+        outputFileEncrypt = scanner.nextLine();
+        System.out.println(Constant.ENTER_KEY);
+        key = scanner.nextInt(); //не хорошо. Надо везде использовать nextLine
+        System.out.println(Constant.ENTER_COMMAND);
+        command = scanner.nextInt();
+    }
 
 
 
