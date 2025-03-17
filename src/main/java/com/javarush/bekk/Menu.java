@@ -2,7 +2,7 @@ package com.javarush.bekk;
 
 import java.util.Scanner;
 
-public class Menu {
+public class Menu extends Enter{
     int command;
     public int mode;
 
@@ -17,7 +17,8 @@ public class Menu {
         command = Integer.parseInt(commandString);
         switch (command) {
                 case 1:
-                    mode = 0; break;
+                    mode = 0;
+                    Menu.super.enterForEncrypt(); break;
                 case 2:
                     mode = 1; break;
                 default:

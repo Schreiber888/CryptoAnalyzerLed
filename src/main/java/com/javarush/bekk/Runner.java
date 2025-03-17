@@ -14,6 +14,8 @@ public class Runner {
             enter.enterForEncrypt();
         } else if (mode == 1) {
             enter.enterForDecrypt();
+        } else if (mode == 2) {
+            System.out.println("выход");
         }
 
         Alphabet alphabet = new Alphabet(enter.getKey());
@@ -36,6 +38,7 @@ public class Runner {
                 System.out.println("This version of the program has two functions implemented");
             }
         } while (!done);
+
     }
 }
 
