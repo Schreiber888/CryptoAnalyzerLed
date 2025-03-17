@@ -2,7 +2,7 @@ package com.javarush.bekk;
 
 public class Menu {
     int command;
-    public static int mode;
+    public int mode;
 
     public int resolveMode(int command) {
             switch (command) {

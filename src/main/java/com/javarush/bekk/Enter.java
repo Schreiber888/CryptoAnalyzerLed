@@ -3,49 +3,63 @@ package com.javarush.bekk;
 import java.util.Scanner;
 
 public class Enter {
-    private static String inputFile;
-    private static String outputFileEncrypt;
-    private static int key;
-    private static int command;
+    private String inputFileDirAndName;
+    private String outputFileEncryptDir;
+    private int key;
+    private int command;
+    private String inputFileEncryptDirAndName;
+    private String outputFileDecryptDir;
 
-    public static String getInputFile() {
-        return inputFile;
+    public String getInputFileDirAndName() {
+        return inputFileDirAndName;
     }
 
-    public static String getOutputFileEncrypt() {
-        return outputFileEncrypt;
+    public String getOutputFileEncryptDir() {
+        return outputFileEncryptDir;
     }
 
-    public static int getKey() {
+    public int getKey() {
         return key;
     }
 
-    public static int getCommand() {
+    public int getCommand() {
         return command;
     }
 
-    public static void enterForEncrypt(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(Constant.ENTER_INPUT_FILE);
-        inputFile = scanner.nextLine();
-        System.out.println(Constant.ENTER_OUTPUT_FILE_ENCRYPT);
-        outputFileEncrypt = scanner.nextLine();
-        System.out.println(Constant.ENTER_KEY);
-        key = scanner.nextInt(); //не хорошо. Надо везде использовать nextLine
-        System.out.println(Constant.ENTER_COMMAND);
-        command = scanner.nextInt();
+    public String getInputFileEncryptDirAndName() {
+        return inputFileEncryptDirAndName;
     }
 
-    public static void enterForDecrypt(){
+    public String getOutputFileDecryptDir() {
+        return outputFileDecryptDir;
+    }
+
+    public void enterForEncrypt(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(Constant.ENTER_INPUT_FILE);
+        inputFileDirAndName = scanner.nextLine();
+        System.out.println(Constant.ENTER_OUTPUT_FILE_ENCRYPT);
+        outputFileEncryptDir = scanner.nextLine();
+        System.out.println(Constant.ENTER_KEY);
+        String keyString = scanner.nextLine();
+        key = Integer.parseInt(keyString);
+        System.out.println(Constant.ENTER_COMMAND);
+        String commandString = scanner.nextLine();
+        command = Integer.parseInt(commandString);
+    }
+
+    public void enterForDecrypt(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(Constant.ENTER_INPUT_FILE_FOR_DECRYPT);
-        inputFile = scanner.nextLine();
+        inputFileEncryptDirAndName = scanner.nextLine();
         System.out.println(Constant.ENTER_OUTPUT_FILE_DECRYPT);
-        outputFileEncrypt = scanner.nextLine();
+        outputFileDecryptDir = scanner.nextLine();
         System.out.println(Constant.ENTER_KEY);
-        key = scanner.nextInt(); //не хорошо. Надо везде использовать nextLine
+        String keyString = scanner.nextLine();
+        key = Integer.parseInt(keyString);
         System.out.println(Constant.ENTER_COMMAND);
-        command = scanner.nextInt();
+        String commandString = scanner.nextLine();
+        command = Integer.parseInt(commandString);
     }
 
 
