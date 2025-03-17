@@ -6,10 +6,6 @@ public class Menu extends Enter{
     int command;
     public int mode;
 
-    public int getMode() {
-        return mode;
-    }
-
     public int resolveMode() {
         System.out.println(Constant.ENTER_COMMAND);
         Scanner scanner = new Scanner(System.in);

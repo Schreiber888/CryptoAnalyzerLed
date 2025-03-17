@@ -22,7 +22,7 @@ public class Encode implements Action{
                         writer.write(arrayAlphabetForEncrypt[i]);
                     } else if (symbol == '\n') {
                         writer.write('\n');
-                        i = ALPHABET.length;//rt
+                        i = ALPHABET.length;
                     }
                 }
             }

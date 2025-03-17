@@ -6,40 +6,11 @@ import java.io.IOException;
 public class Runner {
     public static void main(String[] args) throws IOException {
         Enter enter = new Enter();
-
         Menu menu = new Menu();
         Encode encode = new Encode();
         Decode decode = new Decode();
         int mode = menu.resolveMode();
-
-        if (mode == 0){
-            enter.enterForEncrypt();
-        } else if (mode == 1) {
-            enter.enterForDecrypt();
-        } else if (mode == 2) {
-            System.out.println("выход");
-        }
-
-        Alphabet alphabet = new Alphabet(enter.getKey());
-        char[] charsAlphabetForEncrypt = alphabet.alphabetForEncrypt(enter.getKey());
-        char[] charsAlphabetForDecrypt = alphabet.alphabetForDecrypt(enter.getKey());
-
-
-        boolean done = false;
-
-        do {
-            if (mode == 0) {
-                encode.doAction(enter.getInputFileDirAndName(), enter.getOutputFileEncryptDir(), alphabet.ALPHABET, charsAlphabetForEncrypt);
-                done = true;
-
-            } else if (mode == 1) {
-                decode.doAction(enter.getInputFileEncryptDirAndName(), enter.getOutputFileDecryptDir(), alphabet.ALPHABET, charsAlphabetForDecrypt);
-                done = true;
-            } else {
-                System.out.println("This version of the program has two functions implemented");
-            }
-        } while (!done);
-
+        Execution.run(mode, enter, encode, decode);
     }
 }
 
@@ -47,7 +18,7 @@ public class Runner {
         System.out.println(Constant.DIRECTIVE_FOR_USER);
         String inputText = "D:\\projects\\1\\text.txt";
         System.out.println(Constant.ENTER_OUTPUT_FILE);
-        String outputTextEncrypt = "D:\\projects\\1\\encryptText.txt";
+        String outputTextEncrypt = "3";
         System.out.println(Constant.);
         String outputTextDecrypt = "D:\\projects\\1\\decryptText.txt";
         int key = 5;
