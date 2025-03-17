@@ -8,6 +8,8 @@ public class Runner {
         Enter enter = new Enter();
 
         Menu menu = new Menu();
+        Encode encode = new Encode();
+        Decode decode = new Decode();
         int mode = menu.resolveMode();
 
         if (mode == 0){
@@ -22,8 +24,7 @@ public class Runner {
         char[] charsAlphabetForEncrypt = alphabet.alphabetForEncrypt(enter.getKey());
         char[] charsAlphabetForDecrypt = alphabet.alphabetForDecrypt(enter.getKey());
 
-        Encode encode = new Encode();
-        Decode decode = new Decode();
+
         boolean done = false;
 
         do {

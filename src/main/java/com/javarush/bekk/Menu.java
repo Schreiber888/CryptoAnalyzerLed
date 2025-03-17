@@ -17,8 +17,7 @@ public class Menu extends Enter{
         command = Integer.parseInt(commandString);
         switch (command) {
                 case 1:
-                    mode = 0;
-                    Menu.super.enterForEncrypt(); break;
+                    mode = 0; break;
                 case 2:
                     mode = 1; break;
                 default:
