@@ -6,14 +6,19 @@ import java.io.IOException;
 public class Runner {
     public static void main(String[] args) throws IOException {
         Enter enter = new Enter();
-        enter.enterForEncrypt();
+
+        Menu menu = new Menu();
+        int mode = menu.resolveMode();
+
+        if (mode == 0){
+            enter.enterForEncrypt();
+        } else if (mode == 1) {
+            enter.enterForDecrypt();
+        }
 
         Alphabet alphabet = new Alphabet(enter.getKey());
         char[] charsAlphabetForEncrypt = alphabet.alphabetForEncrypt(enter.getKey());
         char[] charsAlphabetForDecrypt = alphabet.alphabetForDecrypt(enter.getKey());
-
-        Menu menu = new Menu();
-        int mode = menu.resolveMode(enter.getCommand());
 
         Encode encode = new Encode();
         Decode decode = new Decode();

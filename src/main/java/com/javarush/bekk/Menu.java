@@ -1,11 +1,21 @@
 package com.javarush.bekk;
 
+import java.util.Scanner;
+
 public class Menu {
     int command;
     public int mode;
 
-    public int resolveMode(int command) {
-            switch (command) {
+    public int getMode() {
+        return mode;
+    }
+
+    public int resolveMode() {
+        System.out.println(Constant.ENTER_COMMAND);
+        Scanner scanner = new Scanner(System.in);
+        String commandString = scanner.nextLine();
+        command = Integer.parseInt(commandString);
+        switch (command) {
                 case 1:
                     mode = 0; break;
                 case 2:

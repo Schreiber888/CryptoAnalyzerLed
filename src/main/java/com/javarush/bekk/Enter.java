@@ -6,7 +6,6 @@ public class Enter {
     private String inputFileDirAndName;
     private String outputFileEncryptDir;
     private int key;
-    private int command;
     private String inputFileEncryptDirAndName;
     private String outputFileDecryptDir;
 
@@ -20,10 +19,6 @@ public class Enter {
 
     public int getKey() {
         return key;
-    }
-
-    public int getCommand() {
-        return command;
     }
 
     public String getInputFileEncryptDirAndName() {
@@ -43,9 +38,6 @@ public class Enter {
         System.out.println(Constant.ENTER_KEY);
         String keyString = scanner.nextLine();
         key = Integer.parseInt(keyString);
-        System.out.println(Constant.ENTER_COMMAND);
-        String commandString = scanner.nextLine();
-        command = Integer.parseInt(commandString);
     }
 
     public void enterForDecrypt(){
@@ -57,9 +49,6 @@ public class Enter {
         System.out.println(Constant.ENTER_KEY);
         String keyString = scanner.nextLine();
         key = Integer.parseInt(keyString);
-        System.out.println(Constant.ENTER_COMMAND);
-        String commandString = scanner.nextLine();
-        command = Integer.parseInt(commandString);
     }
 
 
