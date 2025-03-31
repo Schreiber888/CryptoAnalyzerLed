@@ -18,7 +18,6 @@ public class Decode implements Action{
                 for (int i = 0; i < ALPHABET.length; i++) {
                     char symbolToLower = Character.toLowerCase(symbol);
                     if (symbolToLower == arrayAlphabetForEncrypt[i]) {
-                        //System.out.print(arrayAlphabet[i]);
                         writer.write(ALPHABET[i]);
                     } else if (symbol == '\n') {
                         writer.write('\n');

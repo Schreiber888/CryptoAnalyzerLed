@@ -20,7 +20,7 @@ public class Alphabet {
                 k++;
             }
         }
-        return arrayAlphabetForEncrypt;//erty
+        return arrayAlphabetForEncrypt;
     }
     public char[] alphabetForDecrypt(int key) {
         char[] arrayAlphabetForEncrypt = new char[ALPHABET.length];

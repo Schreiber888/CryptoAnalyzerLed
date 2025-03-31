@@ -1,33 +1,33 @@
 package com.javarush.bekk;
 
 public class Execution {
-    public static void run(int mode, Enter enter, Encode encode, Decode decode) {
+
+    public static void run(Enter enter, Encode encode, Decode decode) throws IllegalArgumentException{
+        boolean exit = false;
+        do {
+            Menu menu = new Menu();
+            int mode = menu.resolveMode();
             if (mode == 0) {
                 enter.enterForEncrypt();
             } else if (mode == 1) {
                 enter.enterForDecrypt();
-            } else  {
-                throw new IllegalArgumentException("incorrect data input " + mode);
+            } else if (mode == 2) {
+                exit = true;
+            } else {
+                throw new IllegalArgumentException("incorrect data input " + (mode + 1));
             }
 
             Alphabet alphabet = new Alphabet(enter.getKey());
             char[] charsAlphabetForEncrypt = alphabet.alphabetForEncrypt(enter.getKey());
             char[] charsAlphabetForDecrypt = alphabet.alphabetForDecrypt(enter.getKey());
 
-
-            boolean done = false;
-
-            do {
-                if (mode == 0) {
-                    encode.doAction(enter.getInputFileDirAndName(), enter.getOutputFileEncryptDir(), alphabet.ALPHABET, charsAlphabetForEncrypt);
-                    done = true;
-
-                } else if (mode == 1) {
-                    decode.doAction(enter.getInputFileEncryptDirAndName(), enter.getOutputFileDecryptDir(), alphabet.ALPHABET, charsAlphabetForDecrypt);
-                    done = true;
-                } else {
-                    System.out.println("This version of the program has two functions implemented");
-                }
-            } while (!done);
+            if (mode == 0) {
+                encode.doAction(enter.getInputFileDirAndName(), enter.getOutputFileEncryptDir(), alphabet.ALPHABET, charsAlphabetForEncrypt);
+                System.out.println(Constant.COMPLETE_Encrypt);
+            } else if (mode == 1) {
+                decode.doAction(enter.getInputFileEncryptDirAndName(), enter.getOutputFileDecryptDir(), alphabet.ALPHABET, charsAlphabetForDecrypt);
+                System.out.println(Constant.COMPLETE_Decrypt);
+            }
+        } while (!exit);
     }
 }
